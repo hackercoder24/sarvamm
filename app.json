@@ -1,0 +1,39 @@
+{
+  "name": "Sarvam Video Bot",
+  "description": "Telegram bot for downloading videos from Sarvam Career Institute",
+  "repository": "https://github.com/yourusername/sarvam-video-bot",
+  "logo": "https://telegra.ph/file/your-logo.jpg",
+  "keywords": ["telegram", "bot", "video", "downloader", "pyrogram"],
+  "env": {
+    "API_ID": {
+      "description": "Get from https://my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get from https://my.telegram.org",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Get from @BotFather on Telegram",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Your Telegram User ID",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}
